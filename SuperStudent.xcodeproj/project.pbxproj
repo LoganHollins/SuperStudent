@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		0806618C1C0690D300D3B53D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0806618B1C0690D300D3B53D /* AppDelegate.swift */; };
-		0806618E1C0690D300D3B53D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0806618D1C0690D300D3B53D /* ViewController.swift */; };
 		080661911C0690D300D3B53D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0806618F1C0690D300D3B53D /* Main.storyboard */; };
 		080661931C0690D300D3B53D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 080661921C0690D300D3B53D /* Assets.xcassets */; };
 		080661961C0690D300D3B53D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 080661941C0690D300D3B53D /* LaunchScreen.storyboard */; };
 		080661A11C0690D300D3B53D /* SuperStudentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080661A01C0690D300D3B53D /* SuperStudentTests.swift */; };
 		080661AC1C0690D300D3B53D /* SuperStudentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080661AB1C0690D300D3B53D /* SuperStudentUITests.swift */; };
+		084C5B191C06947B00BCAC31 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C5B181C06947B00BCAC31 /* HomeController.swift */; };
+		084C5B1B1C06948E00BCAC31 /* ScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C5B1A1C06948E00BCAC31 /* ScheduleController.swift */; };
+		084C5B1D1C0694A700BCAC31 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C5B1C1C0694A700BCAC31 /* SettingsController.swift */; };
+		084C5B1F1C0694C200BCAC31 /* QuestionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C5B1E1C0694C200BCAC31 /* QuestionsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +39,6 @@
 /* Begin PBXFileReference section */
 		080661881C0690D300D3B53D /* SuperStudent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperStudent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0806618B1C0690D300D3B53D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0806618D1C0690D300D3B53D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		080661901C0690D300D3B53D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		080661921C0690D300D3B53D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		080661951C0690D300D3B53D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +49,10 @@
 		080661A71C0690D300D3B53D /* SuperStudentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperStudentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		080661AB1C0690D300D3B53D /* SuperStudentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperStudentUITests.swift; sourceTree = "<group>"; };
 		080661AD1C0690D300D3B53D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		084C5B181C06947B00BCAC31 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		084C5B1A1C06948E00BCAC31 /* ScheduleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleController.swift; sourceTree = "<group>"; };
+		084C5B1C1C0694A700BCAC31 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		084C5B1E1C0694C200BCAC31 /* QuestionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +104,14 @@
 			isa = PBXGroup;
 			children = (
 				0806618B1C0690D300D3B53D /* AppDelegate.swift */,
-				0806618D1C0690D300D3B53D /* ViewController.swift */,
 				0806618F1C0690D300D3B53D /* Main.storyboard */,
 				080661921C0690D300D3B53D /* Assets.xcassets */,
 				080661941C0690D300D3B53D /* LaunchScreen.storyboard */,
 				080661971C0690D300D3B53D /* Info.plist */,
+				084C5B181C06947B00BCAC31 /* HomeController.swift */,
+				084C5B1A1C06948E00BCAC31 /* ScheduleController.swift */,
+				084C5B1C1C0694A700BCAC31 /* SettingsController.swift */,
+				084C5B1E1C0694C200BCAC31 /* QuestionsController.swift */,
 			);
 			path = SuperStudent;
 			sourceTree = "<group>";
@@ -256,8 +265,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0806618E1C0690D300D3B53D /* ViewController.swift in Sources */,
+				084C5B1D1C0694A700BCAC31 /* SettingsController.swift in Sources */,
+				084C5B191C06947B00BCAC31 /* HomeController.swift in Sources */,
 				0806618C1C0690D300D3B53D /* AppDelegate.swift in Sources */,
+				084C5B1B1C06948E00BCAC31 /* ScheduleController.swift in Sources */,
+				084C5B1F1C0694C200BCAC31 /* QuestionsController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +496,7 @@
 				080661B21C0690D300D3B53D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		080661B31C0690D300D3B53D /* Build configuration list for PBXNativeTarget "SuperStudentTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +505,7 @@
 				080661B51C0690D300D3B53D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		080661B61C0690D300D3B53D /* Build configuration list for PBXNativeTarget "SuperStudentUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +514,7 @@
 				080661B81C0690D300D3B53D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
