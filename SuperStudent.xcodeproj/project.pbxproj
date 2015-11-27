@@ -17,6 +17,7 @@
 		084C5B1B1C06948E00BCAC31 /* ScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C5B1A1C06948E00BCAC31 /* ScheduleController.swift */; };
 		084C5B1D1C0694A700BCAC31 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C5B1C1C0694A700BCAC31 /* SettingsController.swift */; };
 		084C5B1F1C0694C200BCAC31 /* QuestionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C5B1E1C0694C200BCAC31 /* QuestionsController.swift */; };
+		228692261C08FAE1006B7B11 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228692251C08FAE1006B7B11 /* Event.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,6 +168,7 @@
 		084C5B1E1C0694C200BCAC31 /* QuestionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionsController.swift; sourceTree = "<group>"; };
 		22146D101C07F9390037B22A /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		22146D421C07FB7E0037B22A /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = "Alamofire-master/../SwiftyJSON-master/SwiftyJSON.xcodeproj"; sourceTree = "<group>"; };
+		228692251C08FAE1006B7B11 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +230,7 @@
 				084C5B1A1C06948E00BCAC31 /* ScheduleController.swift */,
 				084C5B1C1C0694A700BCAC31 /* SettingsController.swift */,
 				084C5B1E1C0694C200BCAC31 /* QuestionsController.swift */,
+				228692251C08FAE1006B7B11 /* Event.swift */,
 			);
 			path = SuperStudent;
 			sourceTree = "<group>";
@@ -526,6 +529,7 @@
 				084C5B191C06947B00BCAC31 /* HomeController.swift in Sources */,
 				0806618C1C0690D300D3B53D /* AppDelegate.swift in Sources */,
 				084C5B1B1C06948E00BCAC31 /* ScheduleController.swift in Sources */,
+				228692261C08FAE1006B7B11 /* Event.swift in Sources */,
 				084C5B1F1C0694C200BCAC31 /* QuestionsController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

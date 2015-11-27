@@ -18,7 +18,7 @@ class HomeController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var bcitLogo: UIImageView!
     let bcit = "bcit.jpg"
     var announcements:[String] = []
-    let events = ["Shane's Birthday Bonanza", "AMD event", "National Paint Drying Observation Challenge", "Solar Eclipse 2016", "Snape kills Dumbledore"]
+    var events:[String] = []
     let simpleTableIdentifier = "SimpleTableIdentifier"
     
     override func viewDidLoad() {
@@ -27,14 +27,27 @@ class HomeController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             if let json = response.result.value {
                 var data = JSON(json)
-                for i in 0...data.count - 1 {
+                for i in 0...data.count - 2 {
                     self.announcements.append(String(data[i]["title"]))
                 }
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     self.tableView.reloadData()
                 })
-                
 
+            }
+        }
+        
+        Alamofire.request(.GET, "https://api.mongolab.com/api/1/databases/rhythmictracks/collections/Events?apiKey=L4HrujTTG-XOamCKvRJp5RwYMpoJ6xCZ").responseJSON { response in
+            
+            if let json = response.result.value {
+                var data = JSON(json)
+                for i in 0...data.count - 2 {
+                    self.events.append(String(data[i]["title"]))
+                }
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.tableView2.reloadData()
+                })
+                
             }
         }
 
