@@ -83,4 +83,19 @@ class HomeController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         return cell!
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        if(tableView == self.tableView) {
+            let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+            let destination = storyboard.instantiateViewControllerWithIdentifier("announcements") as! AnnouncementTableViewController
+            navigationController?.pushViewController(destination, animated: true)
+        } else {
+            let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+            let destination = storyboard.instantiateViewControllerWithIdentifier("events") as! EventTableViewController
+            navigationController?.pushViewController(destination, animated: true)
+        }
+    }
 }

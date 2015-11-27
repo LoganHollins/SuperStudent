@@ -133,4 +133,14 @@ class ScheduleController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         updateSchedule(date, type: filterType)
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let destination = storyboard.instantiateViewControllerWithIdentifier("events") as! EventTableViewController
+        navigationController?.pushViewController(destination, animated: true)
+    }
+    
 }
