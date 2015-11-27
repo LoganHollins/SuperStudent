@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="L69-c2-mkK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="L69-c2-mkK">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Questions-->
         <scene sceneID="FPj-xK-jII">
             <objects>
-                <viewController id="7Rt-fx-j1i" customClass="QuestionsController" customModule="RhythmicTracks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7Rt-fx-j1i" customClass="QuestionsController" customModule="SuperStudent" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Dxu-mx-Z6w"/>
                         <viewControllerLayoutGuide type="bottom" id="k36-Fd-bVr"/>
@@ -55,7 +56,7 @@
         <!--Home-->
         <scene sceneID="tgo-Qc-gZW">
             <objects>
-                <viewController id="VsP-Ce-51b" customClass="HomeController" customModule="RhythmicTracks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="VsP-Ce-51b" customClass="HomeController" customModule="SuperStudent" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5FF-8q-aPM"/>
                         <viewControllerLayoutGuide type="bottom" id="a6g-J7-zKu"/>
@@ -150,7 +151,7 @@
         <!--Settings-->
         <scene sceneID="N8c-jC-XqL">
             <objects>
-                <viewController id="4Rd-ik-57H" customClass="SettingsController" customModule="RhythmicTracks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="4Rd-ik-57H" customClass="SettingsController" customModule="SuperStudent" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mJ1-L8-8nw"/>
                         <viewControllerLayoutGuide type="bottom" id="eJq-T5-wWh"/>
@@ -276,7 +277,7 @@
         <!--Schedule-->
         <scene sceneID="wci-dl-xAL">
             <objects>
-                <viewController id="Txb-xn-EWc" customClass="ScheduleController" customModule="RhythmicTracks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Txb-xn-EWc" customClass="ScheduleController" customModule="SuperStudent" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nmC-p5-XqO"/>
                         <viewControllerLayoutGuide type="bottom" id="Wd1-5c-HCR"/>
