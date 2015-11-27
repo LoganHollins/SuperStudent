@@ -31,7 +31,7 @@ class ScheduleController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         datePicker.addTarget(self, action: Selector("datePickerChanged:"), forControlEvents: UIControlEvents.ValueChanged)
-        updateSchedule(NSDate(), type: FilterType.All)
+        updateSchedule(NSDate(), type: FilterType.Today)
         // Do any additional setup after loading the view.
     }
     
