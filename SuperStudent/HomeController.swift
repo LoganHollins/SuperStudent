@@ -12,7 +12,6 @@ import Alamofire
 import SwiftyJSON
 
 class HomeController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tableView2: UITableView!
     @IBOutlet weak var bcitLogo: UIImageView!
