@@ -62,18 +62,20 @@ class ScheduleController: UIViewController, UITableViewDataSource, UITableViewDe
                                         endTime: data[i]["endTime"].stringValue)
                     let date = formatter.dateFromString(event.date)
                     if(date != nil) {
-                        if(self.filterType == FilterType.ThisWeek) {
-                            if(NSCalendar.currentCalendar().compareDate(date!, toDate: selectedDate, toUnitGranularity:             NSCalendarUnit.WeekOfYear) == .OrderedSame) {
+                        if(type == FilterType.ThisWeek) {
+                            if(NSCalendar.currentCalendar().compareDate(date!, toDate: selectedDate, toUnitGranularity: NSCalendarUnit.WeekOfYear) == .OrderedSame) {
                                 self.events.append(event)
                             }
-                        } else if(self.filterType == FilterType.Today) {
-                            if(NSCalendar.currentCalendar().compareDate(date!, toDate: selectedDate, toUnitGranularity:             NSCalendarUnit.Day) == .OrderedSame) {
+                        } else if(type == FilterType.Today) {
+                            print("woooo")
+                            if(NSCalendar.currentCalendar().compareDate(date!, toDate: selectedDate, toUnitGranularity: NSCalendarUnit.Day) == .OrderedSame) {
                                 self.events.append(event)
                             }
                         } else {
                             self.events.append(event)
                         }
                     }
+                    
                 }
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     self.events.sortInPlace({$0.date < $1.date})
