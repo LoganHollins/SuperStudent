@@ -21,7 +21,18 @@ class QuestionsDrilldownController: UIViewController, UITableViewDataSource, UIT
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationLabel.title = header
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         getQuestions()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "addQuestionSegue") {
+            if let destination = segue.destinationViewController as? AddQuestionController {
+                destination.header = header
+            }
+        }
     }
     
     func getQuestions() {

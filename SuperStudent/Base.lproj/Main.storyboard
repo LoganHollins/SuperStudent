@@ -99,6 +99,10 @@
                             </textView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yMy-Kf-bpC">
                                 <rect key="frame" x="97" y="363" width="203" height="148"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="RLY-IK-UaU" id="m7h-lX-KC2"/>
+                                    <outlet property="delegate" destination="RLY-IK-UaU" id="Dii-Z0-Fzf"/>
+                                </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2vq-Oc-DGH">
                                 <rect key="frame" x="20" y="426" width="71" height="21"/>
@@ -134,9 +138,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Ask a Question" id="cvy-ur-4gA">
-                        <barButtonItem key="rightBarButtonItem" title="Create" id="dhX-To-LWC"/>
+                        <barButtonItem key="rightBarButtonItem" title="Create" id="dhX-To-LWC">
+                            <connections>
+                                <action selector="buttonPressed:" destination="RLY-IK-UaU" id="Cph-WN-QL2"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="pickerView" destination="yMy-Kf-bpC" id="vR3-QF-n4i"/>
                         <outlet property="questionText" destination="8x3-4i-ogM" id="wgD-ga-MTV"/>
                         <outlet property="titleText" destination="GrM-8j-6dR" id="0vf-1E-X2T"/>
                     </connections>
@@ -640,7 +649,7 @@
                     <navigationItem key="navigationItem" id="sjJ-Tf-CYL">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="DBU-bF-ZJk">
                             <connections>
-                                <segue destination="RLY-IK-UaU" kind="push" id="XxM-8n-SGC"/>
+                                <segue destination="RLY-IK-UaU" kind="push" identifier="addQuestionSegue" id="XxM-8n-SGC"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
