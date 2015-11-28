@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var studentIdField: UITextField!
     
@@ -21,12 +21,32 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.passwordField.delegate = self
+        self.studentIdField.delegate = self
         loginImage.image = UIImage(named: "bcit-login")
         // Do any additional setup after loading the view.
     }
+    func textFieldShouldReturn(textField: UITextField!) -> Bool {
+        
+        //textField code
+        
+        textField.resignFirstResponder()  //if desired
+        loginUser()
+        return true
+    }
+
     
     @IBAction func handleLogin(sender: AnyObject) {
-        self.performSegueWithIdentifier("login", sender: self)
+        loginUser();
+//        self.performSegueWithIdentifier("login", sender: self)
+            }
+    
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    func loginUser(){
         let id:String = studentIdField.text!
         let pass:String = passwordField.text!
         Alamofire.request(.GET, "https://api.mongolab.com/api/1/databases/rhythmictracks/collections/Users", parameters : ["apiKey":"L4HrujTTG-XOamCKvRJp5RwYMpoJ6xCZ", "q" : "{'password':'\(pass)', 'studentId':'\(id)'}"]).responseJSON { response in
@@ -43,12 +63,7 @@ class LoginViewController: UIViewController {
                 
             }
         }
-    }
-    
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
