@@ -20,6 +20,7 @@
 		228692261C08FAE1006B7B11 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228692251C08FAE1006B7B11 /* Event.swift */; };
 		8B1E7DB01C091667000DD195 /* AnnouncementTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1E7DAF1C091667000DD195 /* AnnouncementTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		8B1E7DBE1C091976000DD195 /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1E7DBD1C091976000DD195 /* EventTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		8B1E7DC01C091E84000DD195 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1E7DBF1C091E84000DD195 /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,6 +174,7 @@
 		228692251C08FAE1006B7B11 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		8B1E7DAF1C091667000DD195 /* AnnouncementTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementTableViewController.swift; sourceTree = "<group>"; };
 		8B1E7DBD1C091976000DD195 /* EventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
+		8B1E7DBF1C091E84000DD195 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +239,7 @@
 				8B1E7DAF1C091667000DD195 /* AnnouncementTableViewController.swift */,
 				8B1E7DBD1C091976000DD195 /* EventTableViewController.swift */,
 				228692251C08FAE1006B7B11 /* Event.swift */,
+				8B1E7DBF1C091E84000DD195 /* LoginViewController.swift */,
 			);
 			path = SuperStudent;
 			sourceTree = "<group>";
@@ -531,6 +534,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B1E7DC01C091E84000DD195 /* LoginViewController.swift in Sources */,
 				084C5B1D1C0694A700BCAC31 /* SettingsController.swift in Sources */,
 				084C5B191C06947B00BCAC31 /* HomeController.swift in Sources */,
 				8B1E7DBE1C091976000DD195 /* EventTableViewController.swift in Sources */,
