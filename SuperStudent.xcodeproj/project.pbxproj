@@ -18,9 +18,11 @@
 		084C5B1D1C0694A700BCAC31 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C5B1C1C0694A700BCAC31 /* SettingsController.swift */; };
 		084C5B1F1C0694C200BCAC31 /* QuestionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C5B1E1C0694C200BCAC31 /* QuestionsController.swift */; };
 		228692261C08FAE1006B7B11 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228692251C08FAE1006B7B11 /* Event.swift */; };
-		8B1E7DB01C091667000DD195 /* AnnouncementTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1E7DAF1C091667000DD195 /* AnnouncementTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		8B1E7DBE1C091976000DD195 /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1E7DBD1C091976000DD195 /* EventTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		8B1E7DC01C091E84000DD195 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1E7DBF1C091E84000DD195 /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		22AD7D561C0950BE002AEEFC /* QuestionsDrilldownController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AD7D551C0950BE002AEEFC /* QuestionsDrilldownController.swift */; };
+		22AD7D641C0958E8002AEEFC /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AD7D631C0958E8002AEEFC /* Question.swift */; };
+		8B1E7DB01C091667000DD195 /* AnnouncementTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1E7DAF1C091667000DD195 /* AnnouncementTableViewController.swift */; };
+		8B1E7DBE1C091976000DD195 /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1E7DBD1C091976000DD195 /* EventTableViewController.swift */; };
+		8B1E7DC01C091E84000DD195 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1E7DBF1C091E84000DD195 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,6 +174,8 @@
 		22146D101C07F9390037B22A /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		22146D421C07FB7E0037B22A /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = "Alamofire-master/../SwiftyJSON-master/SwiftyJSON.xcodeproj"; sourceTree = "<group>"; };
 		228692251C08FAE1006B7B11 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		22AD7D551C0950BE002AEEFC /* QuestionsDrilldownController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionsDrilldownController.swift; sourceTree = "<group>"; };
+		22AD7D631C0958E8002AEEFC /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		8B1E7DAF1C091667000DD195 /* AnnouncementTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementTableViewController.swift; sourceTree = "<group>"; };
 		8B1E7DBD1C091976000DD195 /* EventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
 		8B1E7DBF1C091E84000DD195 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -240,6 +244,8 @@
 				8B1E7DBD1C091976000DD195 /* EventTableViewController.swift */,
 				228692251C08FAE1006B7B11 /* Event.swift */,
 				8B1E7DBF1C091E84000DD195 /* LoginViewController.swift */,
+				22AD7D551C0950BE002AEEFC /* QuestionsDrilldownController.swift */,
+				22AD7D631C0958E8002AEEFC /* Question.swift */,
 			);
 			path = SuperStudent;
 			sourceTree = "<group>";
@@ -535,6 +541,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B1E7DC01C091E84000DD195 /* LoginViewController.swift in Sources */,
+				22AD7D561C0950BE002AEEFC /* QuestionsDrilldownController.swift in Sources */,
 				084C5B1D1C0694A700BCAC31 /* SettingsController.swift in Sources */,
 				084C5B191C06947B00BCAC31 /* HomeController.swift in Sources */,
 				8B1E7DBE1C091976000DD195 /* EventTableViewController.swift in Sources */,
@@ -542,6 +549,7 @@
 				8B1E7DB01C091667000DD195 /* AnnouncementTableViewController.swift in Sources */,
 				084C5B1B1C06948E00BCAC31 /* ScheduleController.swift in Sources */,
 				228692261C08FAE1006B7B11 /* Event.swift in Sources */,
+				22AD7D641C0958E8002AEEFC /* Question.swift in Sources */,
 				084C5B1F1C0694C200BCAC31 /* QuestionsController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

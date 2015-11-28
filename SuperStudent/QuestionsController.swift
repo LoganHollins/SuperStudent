@@ -19,6 +19,16 @@ class QuestionsController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "questionsSegue") {
+            if let destination = segue.destinationViewController as? QuestionsDrilldownController {
+                if let questionsIndex = questionsTable.indexPathForSelectedRow?.row {
+                    destination.header = questions[questionsIndex]
+                }
+            }
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="MEc-iS-XFa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="MEc-iS-XFa">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -29,7 +29,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="skf-33-KTJ" kind="push" id="GGV-FR-EfL"/>
+                                            <segue destination="skf-33-KTJ" kind="push" identifier="questionsSegue" id="GGV-FR-EfL"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -416,10 +416,9 @@
             </objects>
             <point key="canvasLocation" x="-496" y="1181"/>
         </scene>
-        <!--Schedule-->
+        <!--Events-->
         <scene sceneID="wci-dl-xAL">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="n6Z-jG-6lP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Txb-xn-EWc" customClass="ScheduleController" customModule="SuperStudent" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nmC-p5-XqO"/>
@@ -429,7 +428,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="dO4-q5-M5p">
+                            <datePicker contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="dO4-q5-M5p">
                                 <rect key="frame" x="20" y="64" width="280" height="78"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="78" id="WF2-xm-Khq"/>
@@ -438,14 +437,18 @@
                                     <!--2015-11-20 04:40:11 +0000-->
                                 </date>
                             </datePicker>
-                            <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PND-UW-QM9">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                                <items>
-                                    <navigationItem title="Schedule" id="McR-lD-Uhh"/>
-                                </items>
-                            </navigationBar>
+                            <pickerView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JpG-GV-zs7">
+                                <rect key="frame" x="83" y="150" width="154" height="78"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="78" id="JYC-ae-Jpb"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="Txb-xn-EWc" id="Hx6-Nz-bWi"/>
+                                    <outlet property="delegate" destination="Txb-xn-EWc" id="Brz-ga-R7e"/>
+                                </connections>
+                            </pickerView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zlh-Lj-I0g">
-                                <rect key="frame" x="0.0" y="236" width="320" height="275"/>
+                                <rect key="frame" x="-27" y="155" width="320" height="275"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="6WZ-NW-yVt">
@@ -462,37 +465,21 @@
                                     <outlet property="delegate" destination="Txb-xn-EWc" id="9VO-Dt-u4f"/>
                                 </connections>
                             </tableView>
-                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JpG-GV-zs7">
-                                <rect key="frame" x="83" y="150" width="154" height="78"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="78" id="JYC-ae-Jpb"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="dataSource" destination="Txb-xn-EWc" id="Hx6-Nz-bWi"/>
-                                    <outlet property="delegate" destination="Txb-xn-EWc" id="Brz-ga-R7e"/>
-                                </connections>
-                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="PND-UW-QM9" secondAttribute="trailing" constant="-20" id="9ou-jA-smr"/>
                             <constraint firstItem="dO4-q5-M5p" firstAttribute="centerX" secondItem="7z2-Q9-jUY" secondAttribute="centerX" id="9uY-az-v2b"/>
                             <constraint firstItem="JpG-GV-zs7" firstAttribute="leading" secondItem="dO4-q5-M5p" secondAttribute="leading" constant="63" id="DBC-Dc-J2s"/>
-                            <constraint firstItem="PND-UW-QM9" firstAttribute="leading" secondItem="7z2-Q9-jUY" secondAttribute="leadingMargin" constant="-20" id="MWB-c3-dlQ"/>
-                            <constraint firstItem="dO4-q5-M5p" firstAttribute="top" secondItem="PND-UW-QM9" secondAttribute="bottom" id="OOm-nx-VH1"/>
                             <constraint firstItem="Zlh-Lj-I0g" firstAttribute="top" secondItem="JpG-GV-zs7" secondAttribute="bottom" constant="8" symbolic="YES" id="SOd-Vw-Wdj"/>
-                            <constraint firstItem="dO4-q5-M5p" firstAttribute="leading" secondItem="PND-UW-QM9" secondAttribute="leading" constant="20" id="U4r-hO-rif"/>
                             <constraint firstItem="JpG-GV-zs7" firstAttribute="centerX" secondItem="Zlh-Lj-I0g" secondAttribute="centerX" id="Ypj-U9-8Pb"/>
                             <constraint firstItem="JpG-GV-zs7" firstAttribute="top" secondItem="dO4-q5-M5p" secondAttribute="bottom" constant="8" symbolic="YES" id="ZdV-6w-cgA"/>
-                            <constraint firstItem="PND-UW-QM9" firstAttribute="top" secondItem="nmC-p5-XqO" secondAttribute="bottom" id="dmr-Hc-7nO"/>
-                            <constraint firstItem="PND-UW-QM9" firstAttribute="centerX" secondItem="7z2-Q9-jUY" secondAttribute="centerX" id="r26-9N-Ai4"/>
                             <constraint firstItem="Zlh-Lj-I0g" firstAttribute="centerX" secondItem="7z2-Q9-jUY" secondAttribute="centerX" id="ra4-jl-j5w"/>
                             <constraint firstItem="JpG-GV-zs7" firstAttribute="centerX" secondItem="7z2-Q9-jUY" secondAttribute="centerX" id="tZA-sx-mJ3"/>
                             <constraint firstItem="Wd1-5c-HCR" firstAttribute="top" secondItem="Zlh-Lj-I0g" secondAttribute="bottom" constant="8" symbolic="YES" id="w2q-af-d0K"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Schedule" image="calendar-7" id="ZXU-fq-KBs"/>
-                    <navigationItem key="navigationItem" id="lLZ-Hq-KJI"/>
+                    <tabBarItem key="tabBarItem" title="Events" image="calendar-7" id="ZXU-fq-KBs"/>
+                    <navigationItem key="navigationItem" title="Events" id="lLZ-Hq-KJI"/>
                     <connections>
                         <outlet property="datePicker" destination="dO4-q5-M5p" id="d6M-LC-HLP"/>
                         <outlet property="pickerView" destination="JpG-GV-zs7" id="dXw-PW-Lek"/>
@@ -500,6 +487,7 @@
                         <outlet property="tableView" destination="Zlh-Lj-I0g" id="2rX-ey-l1G"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n6Z-jG-6lP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-52" y="1164"/>
         </scene>
@@ -549,15 +537,28 @@
             </objects>
             <point key="canvasLocation" x="190" y="596"/>
         </scene>
-        <!--View Controller-->
+        <!--Questions Drilldown Controller-->
         <scene sceneID="BOI-2u-AvQ">
             <objects>
-                <viewController id="skf-33-KTJ" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="z3C-ao-xwU"/>
+                <viewController id="skf-33-KTJ" customClass="QuestionsDrilldownController" customModule="SuperStudent" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="qXf-EL-Pem">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="skf-33-KTJ" id="dfb-gG-xZD"/>
+                            <outlet property="delegate" destination="skf-33-KTJ" id="RTb-dh-J4w"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="sjJ-Tf-CYL"/>
+                    <connections>
+                        <outlet property="navigationLabel" destination="sjJ-Tf-CYL" id="dX0-82-Qky"/>
+                        <outlet property="tableView" destination="qXf-EL-Pem" id="Mjc-VX-hyM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gIZ-In-MP8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1087" y="748"/>
+            <point key="canvasLocation" x="1087" y="766"/>
         </scene>
         <!--Announcement Details-->
         <scene sceneID="Jrw-Yz-iO8">

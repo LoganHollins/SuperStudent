@@ -67,7 +67,6 @@ class ScheduleController: UIViewController, UITableViewDataSource, UITableViewDe
                                 self.events.append(event)
                             }
                         } else if(type == FilterType.Today) {
-                            print("woooo")
                             if(NSCalendar.currentCalendar().compareDate(date!, toDate: selectedDate, toUnitGranularity: NSCalendarUnit.Day) == .OrderedSame) {
                                 self.events.append(event)
                             }
