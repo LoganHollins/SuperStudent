@@ -9,11 +9,9 @@
 import UIKit
 
 class QuestionsController: UIViewController {
-    
-    let simpleTableIdentifier = "SimpleTableIdentifier"
-    let questions = ["General", "Programming", "Law", "Math", "Business", "Accounting", "Nursing", "Miscellaneous", "Off-Topic", "Dumb Questions"]
+    let simpleTableIdentifier = "QuestionsTableViewCell"
+    let questions = ["General", "Computing", "Business", "Engineering", "Math", "Law", "Accounting", "Nursing", "Apprenticeships", "Off-Topic"]
     @IBOutlet weak var questionsTable: UITableView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
