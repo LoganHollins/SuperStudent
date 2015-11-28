@@ -17,6 +17,7 @@
 		084C5B1B1C06948E00BCAC31 /* ScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C5B1A1C06948E00BCAC31 /* ScheduleController.swift */; };
 		084C5B1D1C0694A700BCAC31 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C5B1C1C0694A700BCAC31 /* SettingsController.swift */; };
 		084C5B1F1C0694C200BCAC31 /* QuestionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C5B1E1C0694C200BCAC31 /* QuestionsController.swift */; };
+		226333D21C0A2EE900BB6B24 /* AddQuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226333D11C0A2EE900BB6B24 /* AddQuestionController.swift */; };
 		228692261C08FAE1006B7B11 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228692251C08FAE1006B7B11 /* Event.swift */; };
 		22AD7D561C0950BE002AEEFC /* QuestionsDrilldownController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AD7D551C0950BE002AEEFC /* QuestionsDrilldownController.swift */; };
 		22AD7D641C0958E8002AEEFC /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AD7D631C0958E8002AEEFC /* Question.swift */; };
@@ -173,6 +174,7 @@
 		084C5B1E1C0694C200BCAC31 /* QuestionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionsController.swift; sourceTree = "<group>"; };
 		22146D101C07F9390037B22A /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		22146D421C07FB7E0037B22A /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = "Alamofire-master/../SwiftyJSON-master/SwiftyJSON.xcodeproj"; sourceTree = "<group>"; };
+		226333D11C0A2EE900BB6B24 /* AddQuestionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddQuestionController.swift; sourceTree = "<group>"; };
 		228692251C08FAE1006B7B11 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		22AD7D551C0950BE002AEEFC /* QuestionsDrilldownController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionsDrilldownController.swift; sourceTree = "<group>"; };
 		22AD7D631C0958E8002AEEFC /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 				8B1E7DBF1C091E84000DD195 /* LoginViewController.swift */,
 				22AD7D551C0950BE002AEEFC /* QuestionsDrilldownController.swift */,
 				22AD7D631C0958E8002AEEFC /* Question.swift */,
+				226333D11C0A2EE900BB6B24 /* AddQuestionController.swift */,
 			);
 			path = SuperStudent;
 			sourceTree = "<group>";
@@ -543,6 +546,7 @@
 				8B1E7DC01C091E84000DD195 /* LoginViewController.swift in Sources */,
 				22AD7D561C0950BE002AEEFC /* QuestionsDrilldownController.swift in Sources */,
 				084C5B1D1C0694A700BCAC31 /* SettingsController.swift in Sources */,
+				226333D21C0A2EE900BB6B24 /* AddQuestionController.swift in Sources */,
 				084C5B191C06947B00BCAC31 /* HomeController.swift in Sources */,
 				8B1E7DBE1C091976000DD195 /* EventTableViewController.swift in Sources */,
 				0806618C1C0690D300D3B53D /* AppDelegate.swift in Sources */,
