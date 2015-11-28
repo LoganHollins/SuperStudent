@@ -524,7 +524,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5no-dZ-i9v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="405" y="1214"/>
+            <point key="canvasLocation" x="917" y="734"/>
         </scene>
         <!--Announcement Details-->
         <scene sceneID="Jrw-Yz-iO8">
@@ -535,10 +535,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="mc1-y4-ptm">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="lQO-Wq-gdF">
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mc1-y4-ptm" id="XZm-sb-3YT">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lQO-Wq-gdF" id="nPm-zx-be0">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
@@ -550,6 +550,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Announcement Details" id="a8V-iv-MxW"/>
+                    <connections>
+                        <outlet property="announcementTable" destination="AIn-qB-pGX" id="VdC-Ze-NCP"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rtW-7P-fNm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

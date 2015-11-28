@@ -136,11 +136,15 @@ class ScheduleController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        let indexPath = tableView.indexPathForSelectedRow;
+        let currentCell = tableView.cellForRowAtIndexPath(indexPath!) as UITableViewCell!;
         
         let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         let destination = storyboard.instantiateViewControllerWithIdentifier("events") as! EventTableViewController
+        destination.eventObject = currentCell.textLabel!.text
         navigationController?.pushViewController(destination, animated: true)
+        
+        tableView.deselectRowAtIndexPath(indexPath!, animated: true)
     }
     
 }
