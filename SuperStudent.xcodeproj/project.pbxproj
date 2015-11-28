@@ -253,11 +253,8 @@
 				22AD7D551C0950BE002AEEFC /* QuestionsDrilldownController.swift */,
 				22AD7D631C0958E8002AEEFC /* Question.swift */,
 				226333D11C0A2EE900BB6B24 /* AddQuestionController.swift */,
-<<<<<<< HEAD
 				227A36671C0A4A1D0082559E /* ViewQuestionController.swift */,
-=======
 				08F1425E1C0A53CE00EB39DF /* EditProfileViewController.swift */,
->>>>>>> 90361f632fd24259260bdcf5077527112aefb629
 			);
 			path = SuperStudent;
 			sourceTree = "<group>";
