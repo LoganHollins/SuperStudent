@@ -9,10 +9,12 @@
 import UIKit
 
 class EventTableViewController: UITableViewController {
+    
+    var eventObject: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(eventObject)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

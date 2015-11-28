@@ -86,17 +86,24 @@ class HomeController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("You selected cell #\(indexPath.row)!")
+
+        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        let indexPath = tableView.indexPathForSelectedRow;
+        let currentCell = tableView.cellForRowAtIndexPath(indexPath!) as UITableViewCell!;
         
         if(tableView == self.tableView) {
-            let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
             let destination = storyboard.instantiateViewControllerWithIdentifier("announcements") as! AnnouncementTableViewController
+            destination.announcementObject = currentCell.textLabel!.text
             navigationController?.pushViewController(destination, animated: true)
         } else {
-            let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
             let destination = storyboard.instantiateViewControllerWithIdentifier("events") as! EventTableViewController
+            destination.eventObject = currentCell.textLabel!.text
             navigationController?.pushViewController(destination, animated: true)
+            
         }
+        tableView.deselectRowAtIndexPath(indexPath!, animated: true)
     }
 }
