@@ -13,7 +13,7 @@ import SwiftyJSON
 class QuestionsDrilldownController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var header = String()
     var questions:[Question] = []
-    let simpleTableIdentifier = "SimpleTableIdentifier"
+    let simpleTableIdentifier = "drilldownTableCell"
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var navigationLabel: UINavigationItem!
@@ -32,6 +32,13 @@ class QuestionsDrilldownController: UIViewController, UITableViewDataSource, UIT
             if let destination = segue.destinationViewController as? AddQuestionController {
                 destination.header = header
             }
+        } else if (segue.identifier == "questionDetailsSegue") {
+            if let destination = segue.destinationViewController as? ViewQuestionController {
+                if let questionsIndex = tableView.indexPathForSelectedRow?.row {
+                    let question = questions[questionsIndex]
+                    destination.question = question
+                }
+            }
         }
     }
     
@@ -42,7 +49,9 @@ class QuestionsDrilldownController: UIViewController, UITableViewDataSource, UIT
             if let json = response.result.value {
                 var data = JSON(json)
                 for i in 0...data.count - 1 {
-                    var question = Question(title: data[i]["title"].stringValue,
+                    var question = Question(
+                        id: data[i]["_id"]["$oid"].stringValue,
+                        title: data[i]["title"].stringValue,
                         question: data[i]["question"].stringValue,
                         category: data[i]["category"].stringValue,
                         date: data[i]["date"].stringValue,

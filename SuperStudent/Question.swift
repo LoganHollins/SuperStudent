@@ -9,6 +9,7 @@
 import Foundation
 
 class Question {
+    var id = ""
     var title = ""
     var question = ""
     var category = ""
@@ -17,7 +18,8 @@ class Question {
     var postedBy = ""
     var upvotes = ""
     
-    init (title: String, question: String, category : String, date: String, time: String, postedBy: String, upvotes: String){
+    init (id: String, title: String, question: String, category : String, date: String, time: String, postedBy: String, upvotes: String) {
+        self.id = id
         self.title = title
         self.question = question
         self.category = category
