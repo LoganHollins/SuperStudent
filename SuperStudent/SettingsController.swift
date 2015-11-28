@@ -25,7 +25,6 @@ class SettingsController: UIViewController {
             
             if let json = response.result.value {
                 var data = JSON(json)
-                print(data)
                 let fname = data[0]["firstName"].stringValue
                 let lname = data[0]["lastName"].stringValue
                 self.nameLabel.text = "\(fname) \(lname)"
@@ -33,12 +32,16 @@ class SettingsController: UIViewController {
                 self.emailLabel.text = data[0]["email"].stringValue
                 self.aboutText.text = data[0]["about"].stringValue
                 self.profilePic.image = UIImage(named: data[0]["pic"].stringValue)
+                StudentInfo.About = data[0]["about"].stringValue
                 
             }
         }
 
     }
-    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        self.aboutText.text = StudentInfo.About
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

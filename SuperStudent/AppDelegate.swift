@@ -9,6 +9,7 @@
 import UIKit
 struct StudentInfo {
     static var StudentId = ""
+    static var About = ""
 }
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
