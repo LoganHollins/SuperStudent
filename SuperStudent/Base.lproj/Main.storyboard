@@ -311,7 +311,7 @@
                                         <rect key="frame" x="0.0" y="28" width="288" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9T7-j9-5nA" id="N4a-7v-HXq">
-                                            <rect key="frame" x="0.0" y="0.0" width="255" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="255" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -332,7 +332,7 @@
                                         <rect key="frame" x="0.0" y="28" width="288" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cQe-PE-CQW" id="Kyi-En-OyV">
-                                            <rect key="frame" x="0.0" y="0.0" width="255" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="255" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -345,9 +345,15 @@
                                     <outlet property="delegate" destination="VsP-Ce-51b" id="0DX-yJ-pyS"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qus-Qh-0Fd">
+                                <rect key="frame" x="262" y="149" width="31" height="30"/>
+                                <state key="normal" title="New"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="qus-Qh-0Fd" firstAttribute="centerY" secondItem="HIx-XO-dsp" secondAttribute="centerY" id="0vU-Qq-2RF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qus-Qh-0Fd" secondAttribute="trailing" constant="11" id="1FD-Lq-Dd0"/>
                             <constraint firstItem="HIx-XO-dsp" firstAttribute="top" secondItem="zWv-Co-gHq" secondAttribute="bottom" constant="8" symbolic="YES" id="2f8-cz-PLf"/>
                             <constraint firstItem="O4w-g2-Scp" firstAttribute="leading" secondItem="HIx-XO-dsp" secondAttribute="leading" id="39u-N3-a1U"/>
                             <constraint firstItem="3kS-Xi-OGg" firstAttribute="leading" secondItem="DCN-6G-3lq" secondAttribute="leadingMargin" id="8UF-j0-Aa3"/>
@@ -376,7 +382,7 @@
             </objects>
             <point key="canvasLocation" x="208" y="-611"/>
         </scene>
-        <!--Announcement View Controller-->
+        <!--Announcement Details-->
         <scene sceneID="5CI-5t-AqT">
             <objects>
                 <viewController id="LwI-wY-4Qj" customClass="AnnouncementViewController" customModule="SuperStudent" customModuleProvider="target" sceneMemberID="viewController">
@@ -387,9 +393,28 @@
                     <view key="view" contentMode="scaleToFill" id="ao5-fw-tmp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RoS-ky-2IP">
+                                <rect key="frame" x="0.0" y="64" width="320" height="226"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="LwI-wY-4Qj" id="n5W-bK-p1c"/>
+                                    <outlet property="delegate" destination="LwI-wY-4Qj" id="eNy-Er-YJe"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RoS-ky-2IP" firstAttribute="leading" secondItem="ao5-fw-tmp" secondAttribute="leading" id="8Ow-MX-mBa"/>
+                            <constraint firstItem="RoS-ky-2IP" firstAttribute="top" secondItem="UIo-Ae-Qo2" secondAttribute="bottom" id="Gha-dE-NMh"/>
+                            <constraint firstItem="RoS-ky-2IP" firstAttribute="bottom" secondItem="Sv2-7U-9ZU" secondAttribute="top" constant="-229" id="j5M-ls-v3c"/>
+                            <constraint firstAttribute="trailing" secondItem="RoS-ky-2IP" secondAttribute="trailing" id="jJ0-fr-2vc"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="HNQ-Ef-BXb"/>
+                    <navigationItem key="navigationItem" title="Announcement Details" id="HNQ-Ef-BXb"/>
+                    <connections>
+                        <outlet property="announcementTable" destination="RoS-ky-2IP" id="Pen-P9-aSt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sKf-MN-LMe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -547,7 +572,7 @@
             </objects>
             <point key="canvasLocation" x="1568" y="83"/>
         </scene>
-        <!--Event View Controller-->
+        <!--Event Details-->
         <scene sceneID="f4t-fI-zJS">
             <objects>
                 <viewController id="7Pr-Tj-UHy" customClass="EventViewController" customModule="SuperStudent" customModuleProvider="target" sceneMemberID="viewController">
@@ -560,7 +585,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="hbv-at-52J"/>
+                    <navigationItem key="navigationItem" title="Event Details" id="hbv-at-52J"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iyv-Xf-kuO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
