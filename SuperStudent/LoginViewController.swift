@@ -47,7 +47,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     func loginUser(){
-        let id:String = studentIdField.text!
+        let id:String = studentIdField.text!.uppercaseString
         let pass:String = passwordField.text!
         Alamofire.request(.GET, "https://api.mongolab.com/api/1/databases/rhythmictracks/collections/Users", parameters : ["apiKey":"L4HrujTTG-XOamCKvRJp5RwYMpoJ6xCZ", "q" : "{'password':'\(pass)', 'studentId':'\(id)'}"]).responseJSON { response in
             
