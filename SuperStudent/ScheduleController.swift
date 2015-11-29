@@ -20,7 +20,7 @@ class ScheduleController: UIViewController, UITableViewDataSource, UITableViewDe
     var events:[Event] = []
     var filterType : FilterType = FilterType.All
     private let filters = ["Today", "This Week", "All"]
-    let simpleTableIdentifier = "SimpleTableIdentifier"
+    let simpleTableIdentifier = "eventScheduleCell"
     
     enum FilterType {
         case Today
@@ -131,19 +131,6 @@ class ScheduleController: UIViewController, UITableViewDataSource, UITableViewDe
                 filterType = FilterType.All
         }
         updateSchedule(date, type: filterType)
-    }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        let indexPath = tableView.indexPathForSelectedRow;
-        let currentCell = tableView.cellForRowAtIndexPath(indexPath!) as UITableViewCell!;
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        let destination = storyboard.instantiateViewControllerWithIdentifier("events") as! EventViewController
-        destination.eventObject = events[0]
-        navigationController?.pushViewController(destination, animated: true)
-        
-        tableView.deselectRowAtIndexPath(indexPath!, animated: true)
     }
     
 }
