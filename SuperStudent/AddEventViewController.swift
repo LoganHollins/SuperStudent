@@ -23,6 +23,9 @@ class AddEventViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.descriptionField.layer.borderWidth = 1
+        self.descriptionField.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0).CGColor
+        self.descriptionField.layer.cornerRadius = 5
     }
     
     override func didReceiveMemoryWarning() {

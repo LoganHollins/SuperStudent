@@ -19,7 +19,11 @@ class AddAnswerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        questionLabel.text = "Answering: \(question.title)"
+        questionLabel.text = "\(question.title)"
+        
+        self.answerField.layer.borderWidth = 1
+        self.answerField.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0).CGColor
+        self.answerField.layer.cornerRadius = 5
     }
     
 

@@ -27,6 +27,10 @@ class EditProfileViewController: UIViewController {
         super.viewDidLoad()
         aboutField.text = StudentInfo.About
         // Do any additional setup after loading the view.
+        self.aboutField.layer.borderWidth = 1
+        self.aboutField.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0).CGColor
+        self.aboutField.layer.cornerRadius = 5
+        
     }
 
     override func didReceiveMemoryWarning() {
