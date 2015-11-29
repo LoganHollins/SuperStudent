@@ -23,6 +23,11 @@ class ViewQuestionController: UIViewController, UITableViewDataSource, UITableVi
     
     let simpleTableIdentifier = "replyCell"
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        getReplies()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,29 +44,30 @@ class ViewQuestionController: UIViewController, UITableViewDataSource, UITableVi
         } else {
             upvotesLabel.text = question.upvotes
         }
-        getReplies()
     }
     
     func getReplies() {
         replies.removeAll()
-        Alamofire.request(.GET, "https://api.mongolab.com/api/1/databases/rhythmictracks/collections/Answers?apiKey=L4HrujTTG-XOamCKvRJp5RwYMpoJ6xCZ").responseJSON { response in
+        Alamofire.request(.GET, "https://api.mongolab.com/api/1/databases/rhythmictracks/collections/Answers?apiKey=L4HrujTTG-XOamCKvRJp5RwYMpoJ6xCZ", parameters: ["q": "{'questionId':'\(self.question.id)'}"]).responseJSON { response in
             
             if let json = response.result.value {
                 var data = JSON(json)
-                for i in 0...data.count - 1 {
-                    var reply = Reply(
-                        answer: data[i]["answer"].stringValue,
-                        questionId: data[i]["questionId"].stringValue,
-                        date: data[i]["date"].stringValue,
-                        time: data[i]["time"].stringValue,
-                        postedBy: data[i]["postedBy"].stringValue,
-                        upvotes: data[i]["upvotes"].stringValue)
-                    if(reply.questionId == self.question.id) {
-                        self.replies.append(reply)
+                if(data[0] != nil){
+                    for i in 0...data.count - 1 {
+                        var reply = Reply(
+                            answer: data[i]["answer"].stringValue,
+                            questionId: data[i]["questionId"].stringValue,
+                            date: data[i]["date"].stringValue,
+                            time: data[i]["time"].stringValue,
+                            postedBy: data[i]["postedBy"].stringValue,
+                            upvotes: data[i]["upvotes"].stringValue)
+                        if(reply.questionId == self.question.id) {
+                            self.replies.append(reply)
+                        }
                     }
                 }
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    self.replies.sortInPlace({$0.date < $1.date})
+                    self.replies.sortInPlace({$0.dateTime.compare($1.dateTime) == NSComparisonResult.OrderedDescending})
                     self.tableView.reloadData()
                 })
                 
@@ -101,4 +107,15 @@ class ViewQuestionController: UIViewController, UITableViewDataSource, UITableVi
         
         return cell!
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "answerSegue") {
+            if let destination = segue.destinationViewController as? AddAnswerViewController {
+                destination.question = question
+            }
+        }
+
+    }
+
 }
+

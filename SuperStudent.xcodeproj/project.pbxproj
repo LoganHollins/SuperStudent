@@ -18,6 +18,9 @@
 		084C5B1D1C0694A700BCAC31 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C5B1C1C0694A700BCAC31 /* SettingsController.swift */; };
 		084C5B1F1C0694C200BCAC31 /* QuestionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C5B1E1C0694C200BCAC31 /* QuestionsController.swift */; };
 		08F1425F1C0A53CE00EB39DF /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F1425E1C0A53CE00EB39DF /* EditProfileViewController.swift */; };
+		08FD37A71C0ABCF60041EDC0 /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD37A61C0ABCF60041EDC0 /* AddEventViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		08FD37B51C0ACC6A0041EDC0 /* AddAnnouncementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD37B41C0ACC6A0041EDC0 /* AddAnnouncementController.swift */; settings = {ASSET_TAGS = (); }; };
+		08FD37B91C0AD9550041EDC0 /* AddAnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD37B81C0AD9550041EDC0 /* AddAnswerViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		222813731C0AA6CF00756AF9 /* Reply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222813721C0AA6CF00756AF9 /* Reply.swift */; };
 		222813811C0AA87D00756AF9 /* ReplyViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222813801C0AA87D00756AF9 /* ReplyViewCellController.swift */; };
 		226333D21C0A2EE900BB6B24 /* AddQuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226333D11C0A2EE900BB6B24 /* AddQuestionController.swift */; };
@@ -178,6 +181,9 @@
 		084C5B1C1C0694A700BCAC31 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		084C5B1E1C0694C200BCAC31 /* QuestionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionsController.swift; sourceTree = "<group>"; };
 		08F1425E1C0A53CE00EB39DF /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		08FD37A61C0ABCF60041EDC0 /* AddEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
+		08FD37B41C0ACC6A0041EDC0 /* AddAnnouncementController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAnnouncementController.swift; sourceTree = "<group>"; };
+		08FD37B81C0AD9550041EDC0 /* AddAnswerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAnswerViewController.swift; sourceTree = "<group>"; };
 		22146D101C07F9390037B22A /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		22146D421C07FB7E0037B22A /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = "Alamofire-master/../SwiftyJSON-master/SwiftyJSON.xcodeproj"; sourceTree = "<group>"; };
 		222813721C0AA6CF00756AF9 /* Reply.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reply.swift; sourceTree = "<group>"; };
@@ -243,11 +249,11 @@
 		0806618A1C0690D300D3B53D /* SuperStudent */ = {
 			isa = PBXGroup;
 			children = (
+				0806618B1C0690D300D3B53D /* AppDelegate.swift */,
 				A494F2201C0A7CF300335656 /* Announcement.swift */,
 				A494F2211C0A7CF300335656 /* AnnouncementViewController.swift */,
 				A494F2221C0A7CF300335656 /* Event.swift */,
 				A494F2231C0A7CF300335656 /* EventViewController.swift */,
-				0806618B1C0690D300D3B53D /* AppDelegate.swift */,
 				0806618F1C0690D300D3B53D /* Main.storyboard */,
 				080661921C0690D300D3B53D /* Assets.xcassets */,
 				080661941C0690D300D3B53D /* LaunchScreen.storyboard */,
@@ -264,6 +270,9 @@
 				08F1425E1C0A53CE00EB39DF /* EditProfileViewController.swift */,
 				222813721C0AA6CF00756AF9 /* Reply.swift */,
 				222813801C0AA87D00756AF9 /* ReplyViewCellController.swift */,
+				08FD37A61C0ABCF60041EDC0 /* AddEventViewController.swift */,
+				08FD37B41C0ACC6A0041EDC0 /* AddAnnouncementController.swift */,
+				08FD37B81C0AD9550041EDC0 /* AddAnswerViewController.swift */,
 			);
 			path = SuperStudent;
 			sourceTree = "<group>";
@@ -560,14 +569,17 @@
 			files = (
 				A494F2241C0A7CF300335656 /* Announcement.swift in Sources */,
 				08F1425F1C0A53CE00EB39DF /* EditProfileViewController.swift in Sources */,
+				08FD37B51C0ACC6A0041EDC0 /* AddAnnouncementController.swift in Sources */,
 				222813731C0AA6CF00756AF9 /* Reply.swift in Sources */,
 				8B1E7DC01C091E84000DD195 /* LoginViewController.swift in Sources */,
 				22AD7D561C0950BE002AEEFC /* QuestionsDrilldownController.swift in Sources */,
 				084C5B1D1C0694A700BCAC31 /* SettingsController.swift in Sources */,
 				222813811C0AA87D00756AF9 /* ReplyViewCellController.swift in Sources */,
+				08FD37A71C0ABCF60041EDC0 /* AddEventViewController.swift in Sources */,
 				A494F2271C0A7CF300335656 /* EventViewController.swift in Sources */,
 				227A36681C0A4A1D0082559E /* ViewQuestionController.swift in Sources */,
 				226333D21C0A2EE900BB6B24 /* AddQuestionController.swift in Sources */,
+				08FD37B91C0AD9550041EDC0 /* AddAnswerViewController.swift in Sources */,
 				084C5B191C06947B00BCAC31 /* HomeController.swift in Sources */,
 				0806618C1C0690D300D3B53D /* AppDelegate.swift in Sources */,
 				A494F2251C0A7CF300335656 /* AnnouncementViewController.swift in Sources */,

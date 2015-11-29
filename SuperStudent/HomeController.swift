@@ -46,9 +46,17 @@ class HomeController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         bcitLogo.image = UIImage(named: bcit)
     }
+    override func viewDidAppear(animated: Bool) {
+        if(StudentInfo.EventCreated){
+            StudentInfo.EventCreated = false;
+            getEventsAndAnnouncements()
+        }
+    }
     
     func getEventsAndAnnouncements() {
-        Alamofire.request(.GET, "https://api.mongolab.com/api/1/databases/rhythmictracks/collections/Announcements?apiKey=L4HrujTTG-XOamCKvRJp5RwYMpoJ6xCZ").responseJSON { response in
+        events.removeAll()
+        announcements.removeAll()
+        Alamofire.request(.GET, "https://api.mongolab.com/api/1/databases/rhythmictracks/collections/Announcements?apiKey=L4HrujTTG-XOamCKvRJp5RwYMpoJ6xCZ", parameters: ["l": 4, "s":"{'_id':-1}"]).responseJSON { response in
             
             if let json = response.result.value {
                 var data = JSON(json)
@@ -65,7 +73,7 @@ class HomeController: UIViewController, UITableViewDataSource, UITableViewDelega
             }
         }
         
-        Alamofire.request(.GET, "https://api.mongolab.com/api/1/databases/rhythmictracks/collections/Events?apiKey=L4HrujTTG-XOamCKvRJp5RwYMpoJ6xCZ").responseJSON { response in
+        Alamofire.request(.GET, "https://api.mongolab.com/api/1/databases/rhythmictracks/collections/Events?apiKey=L4HrujTTG-XOamCKvRJp5RwYMpoJ6xCZ", parameters: ["l": 5, "s":"{'_id':-1}"]).responseJSON { response in
             
             if let json = response.result.value {
                 var data = JSON(json)
