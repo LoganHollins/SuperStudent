@@ -13,8 +13,8 @@ class ViewQuestionController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var postedByLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var upvotesLabel: UILabel!
+    @IBOutlet weak var questionLabel: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,12 +25,12 @@ class ViewQuestionController: UIViewController {
         questionLabel.text = question.question
         if Int(question.upvotes) > 0 {
             upvotesLabel.textColor = UIColor.greenColor()
-            upvotesLabel.text = "+" + question.upvotes
+            upvotesLabel.text = "+" + question.upvotes + " "
         } else if Int(question.upvotes) < 0 {
             upvotesLabel.textColor = UIColor.redColor()
-            upvotesLabel.text = question.upvotes
+            upvotesLabel.text = question.upvotes + " "
         } else {
-            upvotesLabel.text = question.upvotes
+            upvotesLabel.text = question.upvotes + " "
         }
     }
 }
