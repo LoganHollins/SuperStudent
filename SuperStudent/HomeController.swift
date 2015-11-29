@@ -9,7 +9,6 @@
     MAJOR FEATURES
         - Admin role
         - Data validation on item creation
-        - Logout functionality
         - Search/filter on data
         - View other profiles
         - Missing CRUD features on announcements, events, questions
