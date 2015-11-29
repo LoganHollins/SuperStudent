@@ -5,6 +5,21 @@
 //  Created by Logan Hollins on 2015-11-25.
 //  Copyright © 2015 Logan Hollins. All rights reserved.
 //
+/*
+    MAJOR FEATURES
+        - Admin role
+        - Create Announcements
+        - Create Events
+        - View Event details
+        - Reply to questions
+        - Search/filter on data
+        - View other profiles
+        - Missing CRUD features on announcements, events, questions
+    MINOR FEATURES
+        - Upvote/downvote questions, replies
+    COSMETIC ENHANCEMENTS
+        - Fix constraints
+*/
 
 
 import UIKit
