@@ -54,12 +54,12 @@ class ScheduleController: UIViewController, UITableViewDataSource, UITableViewDe
             if let json = response.result.value {
                 var data = JSON(json)
                 for i in 0...data.count - 1 {
-                    var event = Event(title: data[i]["title"].stringValue,
-                                        description: data[i]["description"].stringValue,
-                                        date: data[i]["date"].stringValue,
-                                        location: data[i]["location"].stringValue,
-                                        startTime: data[i]["startTime"].stringValue,
-                                        endTime: data[i]["endTime"].stringValue)
+                    let event = Event(title: data[i]["title"].stringValue,
+                        description: data[i]["description"].stringValue,
+                        date: data[i]["date"].stringValue,
+                        location: data[i]["location"].stringValue,
+                        startTime: data[i]["startTime"].stringValue,
+                        endTime: data[i]["endTime"].stringValue)
                     let date = formatter.dateFromString(event.date)
                     if(date != nil) {
                         if(type == FilterType.ThisWeek) {
@@ -139,8 +139,8 @@ class ScheduleController: UIViewController, UITableViewDataSource, UITableViewDe
         let currentCell = tableView.cellForRowAtIndexPath(indexPath!) as UITableViewCell!;
         
         let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        let destination = storyboard.instantiateViewControllerWithIdentifier("events") as! EventTableViewController
-        destination.eventObject = currentCell.textLabel!.text
+        let destination = storyboard.instantiateViewControllerWithIdentifier("events") as! EventViewController
+        destination.eventObject = events[0]
         navigationController?.pushViewController(destination, animated: true)
         
         tableView.deselectRowAtIndexPath(indexPath!, animated: true)

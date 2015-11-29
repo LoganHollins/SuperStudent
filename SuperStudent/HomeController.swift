@@ -12,28 +12,41 @@ import Alamofire
 import SwiftyJSON
 
 class HomeController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var tableView2: UITableView!
+    
+    
+    @IBOutlet weak var announcementTable: UITableView!
+    
+    @IBOutlet weak var eventTable: UITableView!
+    
     @IBOutlet weak var bcitLogo: UIImageView!
     let bcit = "bcit.jpg"
-    var announcements:[String] = []
-    var events:[String] = []
-    let simpleTableIdentifier = "SimpleTableIdentifier"
+    var announcements:[Announcement] = []
+    var events:[Event] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        getEventsAndAnnouncements()
+        
+        bcitLogo.image = UIImage(named: bcit)
+    }
+    
+    func getEventsAndAnnouncements() {
         Alamofire.request(.GET, "https://api.mongolab.com/api/1/databases/rhythmictracks/collections/Announcements?apiKey=L4HrujTTG-XOamCKvRJp5RwYMpoJ6xCZ").responseJSON { response in
             
             if let json = response.result.value {
                 var data = JSON(json)
                 for i in 0...data.count - 2 {
-                    self.announcements.append(String(data[i]["title"]))
+                    var announcement = Announcement(title: data[i]["title"].stringValue,
+                        description: data[i]["description"].stringValue,
+                        date: data[i]["date"].stringValue)
+                    self.announcements.append(announcement)
                 }
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    self.tableView.reloadData()
+                    self.announcementTable.reloadData()
                 })
-
+                
             }
         }
         
@@ -42,16 +55,21 @@ class HomeController: UIViewController, UITableViewDataSource, UITableViewDelega
             if let json = response.result.value {
                 var data = JSON(json)
                 for i in 0...data.count - 2 {
-                    self.events.append(String(data[i]["title"]))
+                    var event = Event(title: data[i]["title"].stringValue,
+                        description: data[i]["description"].stringValue,
+                        date: data[i]["date"].stringValue,
+                        location: data[i]["location"].stringValue,
+                        startTime: data[i]["startTime"].stringValue,
+                        endTime: data[i]["endTime"].stringValue)
+                    self.events.append(event)
+                    
                 }
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    self.tableView2.reloadData()
+                    self.eventTable.reloadData()
                 })
                 
             }
         }
-
-        bcitLogo.image = UIImage(named: bcit)
     }
     
     override func didReceiveMemoryWarning() {
@@ -63,7 +81,7 @@ class HomeController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if(tableView == self.tableView) {
+        if(tableView == self.announcementTable) {
             return announcements.count
         } else {
             return events.count
@@ -71,39 +89,41 @@ class HomeController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell = UITableViewCell!()
         
-        var cell = tableView.dequeueReusableCellWithIdentifier(simpleTableIdentifier) as UITableViewCell!
-        
-        if(cell == nil) {
-            cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: simpleTableIdentifier)
-        }
-        if(tableView == self.tableView) {
-            cell!.textLabel!.text = announcements[indexPath.row]
+        if(tableView == self.announcementTable) {
+            cell = tableView.dequeueReusableCellWithIdentifier("announcementCell") as UITableViewCell!
+            
+            if(cell == nil) {
+                cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "announcementCell")
+            }
+            cell!.textLabel!.text = announcements[indexPath.row].title
         } else {
-            cell!.textLabel!.text = events[indexPath.row]
+            cell = tableView.dequeueReusableCellWithIdentifier("eventCell") as UITableViewCell!
+            
+            if(cell == nil) {
+                cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "eventCell")
+            }
+            cell!.textLabel!.text = events[indexPath.row].title
         }
-        return cell!
+        return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("You selected cell #\(indexPath.row)!")
-
-        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        
-        
-        let indexPath = tableView.indexPathForSelectedRow;
-        let currentCell = tableView.cellForRowAtIndexPath(indexPath!) as UITableViewCell!;
-        
-        if(tableView == self.tableView) {
-            let destination = storyboard.instantiateViewControllerWithIdentifier("announcements") as! AnnouncementTableViewController
-            destination.announcementObject = currentCell.textLabel!.text
-            navigationController?.pushViewController(destination, animated: true)
-        } else {
-            let destination = storyboard.instantiateViewControllerWithIdentifier("events") as! EventTableViewController
-            destination.eventObject = currentCell.textLabel!.text
-            navigationController?.pushViewController(destination, animated: true)
-            
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "announcementSegue") {
+            if let destination = segue.destinationViewController as? AnnouncementViewController {
+                destination.announcementObject = announcements[(announcementTable.indexPathForSelectedRow?.row)!]
+            }
         }
-        tableView.deselectRowAtIndexPath(indexPath!, animated: true)
+        
+        if(segue.identifier == "eventSegue") {
+            if let destination = segue.destinationViewController as? EventViewController {
+                destination.eventObject = events[(eventTable.indexPathForSelectedRow?.row)!]
+            }
+        }
     }
 }
