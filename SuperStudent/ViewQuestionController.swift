@@ -67,7 +67,7 @@ class ViewQuestionController: UIViewController, UITableViewDataSource, UITableVi
                     }
                 }
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    self.replies.sortInPlace({$0.date < $1.date})
+                    self.replies.sortInPlace({$0.dateTime.compare($1.dateTime) == NSComparisonResult.OrderedDescending})
                     self.tableView.reloadData()
                 })
                 
@@ -116,4 +116,6 @@ class ViewQuestionController: UIViewController, UITableViewDataSource, UITableVi
         }
 
     }
+
 }
+
