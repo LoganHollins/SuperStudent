@@ -19,6 +19,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var errorField: UILabel!
     
+    @IBOutlet weak var activityViewer: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.passwordField.delegate = self
@@ -47,12 +49,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     func loginUser(){
+        activityViewer.startAnimating()
         //self.performSegueWithIdentifier("login", sender: self)
-        let id:String = studentIdField.text!.uppercaseString    
+        let id:String = studentIdField.text!.uppercaseString
         let pass:String = passwordField.text!
         Alamofire.request(.GET, "https://api.mongolab.com/api/1/databases/rhythmictracks/collections/Users", parameters : ["apiKey":"L4HrujTTG-XOamCKvRJp5RwYMpoJ6xCZ", "q" : "{'password':'\(pass)', 'studentId':'\(id)'}"]).responseJSON { response in
             
             if let json = response.result.value {
+                self.activityViewer.stopAnimating()
+
                 var data = JSON(json)
                 if(data[0] == nil) {
                     self.errorField.text = "Invalid credentials, please try again."
