@@ -14,10 +14,11 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var aboutField: UITextView!
     
     @IBAction func updateProfile(sender: AnyObject) {
-        var path = "https://api.mongolab.com/api/1/databases/rhythmictracks/collections/Users?apiKey=L4HrujTTG-XOamCKvRJp5RwYMpoJ6xCZ&q={'studentId':'A00111111'}"
+        var path = "https://api.mongolab.com/api/1/databases/rhythmictracks/collections/Users?apiKey=L4HrujTTG-XOamCKvRJp5RwYMpoJ6xCZ&q={'studentId':'\(StudentInfo.StudentId)'}"
         path = path.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
         Alamofire.request(.PUT, path, parameters: ["$set": ["about":aboutField.text]], encoding: .JSON)
         StudentInfo.About = aboutField.text
+        navigationController?.popViewControllerAnimated(true)
     }
     
     

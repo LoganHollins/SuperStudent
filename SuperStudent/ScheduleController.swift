@@ -132,5 +132,17 @@ class ScheduleController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         updateSchedule(date, type: filterType)
     }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "eventScheduleSegue") {
+            if let destination = segue.destinationViewController as? EventViewController {
+                destination.eventObject = events[(tableView.indexPathForSelectedRow?.row)!]
+            }
+        }
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
     
 }
