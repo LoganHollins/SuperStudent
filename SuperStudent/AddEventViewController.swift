@@ -49,8 +49,9 @@ class AddEventViewController: UIViewController {
             "description": descriptionField.text!
         ]
         Alamofire.request(.POST, "https://api.mongolab.com/api/1/databases/rhythmictracks/collections/Events?apiKey=L4HrujTTG-XOamCKvRJp5RwYMpoJ6xCZ", parameters: parameters, encoding: .JSON)
+        StudentInfo.EventCreated = true
         navigationController?.popViewControllerAnimated(true)
-
+        
         
         
         

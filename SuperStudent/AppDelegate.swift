@@ -10,6 +10,7 @@ import UIKit
 struct StudentInfo {
     static var StudentId = ""
     static var About = ""
+    static var EventCreated = false
 }
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
