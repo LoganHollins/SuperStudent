@@ -85,7 +85,7 @@ class ViewQuestionController: UIViewController, UITableViewDataSource, UITableVi
             cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: simpleTableIdentifier) as! ReplyViewCellController
         }
         
-        cell!.replyByLabel.text = replies[indexPath.row].postedBy
+        cell!.replyByLabel.text = replies[indexPath.row].postedBy + " replied:"
         cell!.replyTextView.text = replies[indexPath.row].answer
         cell!.dateLabel.text = replies[indexPath.row].date + " " + replies[indexPath.row].time
         
