@@ -32,7 +32,6 @@ class AddAnnouncementController: UIViewController {
         Alamofire.request(.POST, "https://api.mongolab.com/api/1/databases/rhythmictracks/collections/Announcements?apiKey=L4HrujTTG-XOamCKvRJp5RwYMpoJ6xCZ", parameters: parameters, encoding: .JSON)
         StudentInfo.EventCreated = true
         navigationController?.popViewControllerAnimated(true)
-        
     }
 
 }

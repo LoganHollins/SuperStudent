@@ -23,6 +23,11 @@ class ViewQuestionController: UIViewController, UITableViewDataSource, UITableVi
     
     let simpleTableIdentifier = "replyCell"
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        getReplies()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,7 +44,6 @@ class ViewQuestionController: UIViewController, UITableViewDataSource, UITableVi
         } else {
             upvotesLabel.text = question.upvotes
         }
-        getReplies()
     }
     
     func getReplies() {
@@ -100,5 +104,14 @@ class ViewQuestionController: UIViewController, UITableViewDataSource, UITableVi
         }
         
         return cell!
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "answerSegue") {
+            if let destination = segue.destinationViewController as? AddAnswerViewController {
+                destination.question = question
+            }
+        }
+
     }
 }

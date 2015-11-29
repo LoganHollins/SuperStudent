@@ -48,6 +48,7 @@ class HomeController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     override func viewDidAppear(animated: Bool) {
         if(StudentInfo.EventCreated){
+            StudentInfo.EventCreated = false;
             getEventsAndAnnouncements()
         }
     }
