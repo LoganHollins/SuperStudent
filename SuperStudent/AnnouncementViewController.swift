@@ -59,9 +59,9 @@ class AnnouncementViewController: UIViewController, UITableViewDataSource, UITab
     func tableView(tableView: UITableView,
         heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
             if indexPath.row == 2 {
-                return 200 //Whatever fits your need for that cell
+                return 200
             } else {
-                return 50 // other cell height
+                return 50 
             }
     }
     /*
