@@ -12,7 +12,7 @@ class AnnouncementViewController: UIViewController, UITableViewDataSource, UITab
     var announcementObject = Announcement()
     let identifiers:[String] = ["Title", "Date", "Description"]
     let simpleTableIdentifier = "detailsTableCell"
-     var announcements:[String] = []
+    var announcements:[String] = []
     
     @IBOutlet weak var announcementTable: UITableView!
     

@@ -8,13 +8,19 @@
 
 import UIKit
 
-class EventViewController: UIViewController {
+class EventViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var eventObject = Event()
-
+    
+    let identifiers:[String] = ["Title", "Date", "Location", "StartTime", "EndTime", "Description"]
+    let simpleTableIdentifier = "detailsTableCell"
+    var events:[String] = []
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        events = [eventObject.title, eventObject.date, eventObject.location, eventObject.startTime, eventObject.endTime, eventObject.description]
         // Do any additional setup after loading the view.
     }
 
@@ -23,6 +29,41 @@ class EventViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return events.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        var cell = tableView.dequeueReusableCellWithIdentifier(simpleTableIdentifier) as UITableViewCell!
+        
+        if(cell == nil) {
+            cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: simpleTableIdentifier)
+        }
+        if(indexPath.row == 5){
+            cell!.detailTextLabel!.numberOfLines = 10
+            cell!.detailTextLabel!.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        }
+        
+        cell!.textLabel!.text = identifiers[indexPath.row]
+        cell!.detailTextLabel!.text = events[indexPath.row]
+        cell!.detailTextLabel!.sizeToFit()
+        return cell!
+    }
+    
+    func tableView(tableView: UITableView,
+        heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+            if indexPath.row == 5 {
+                return 200 //Whatever fits your need for that cell
+            } else {
+                return 50 // other cell height
+            }
+    }
+
 
     /*
     // MARK: - Navigation
