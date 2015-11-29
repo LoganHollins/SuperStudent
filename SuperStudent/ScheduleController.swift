@@ -20,7 +20,7 @@ class ScheduleController: UIViewController, UITableViewDataSource, UITableViewDe
     var events:[Event] = []
     var filterType : FilterType = FilterType.All
     private let filters = ["Today", "This Week", "All"]
-    let simpleTableIdentifier = "SimpleTableIdentifier"
+    let simpleTableIdentifier = "eventScheduleCell"
     
     enum FilterType {
         case Today
@@ -132,18 +132,17 @@ class ScheduleController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         updateSchedule(date, type: filterType)
     }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "eventScheduleSegue") {
+            if let destination = segue.destinationViewController as? EventViewController {
+                destination.eventObject = events[(tableView.indexPathForSelectedRow?.row)!]
+            }
+        }
+    }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        let indexPath = tableView.indexPathForSelectedRow;
-        let currentCell = tableView.cellForRowAtIndexPath(indexPath!) as UITableViewCell!;
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        let destination = storyboard.instantiateViewControllerWithIdentifier("events") as! EventViewController
-        destination.eventObject = events[0]
-        navigationController?.pushViewController(destination, animated: true)
-        
-        tableView.deselectRowAtIndexPath(indexPath!, animated: true)
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
+    
     
 }
