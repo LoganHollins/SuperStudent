@@ -48,7 +48,7 @@ class HomeController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func getEventsAndAnnouncements() {
-        Alamofire.request(.GET, "https://api.mongolab.com/api/1/databases/rhythmictracks/collections/Announcements?apiKey=L4HrujTTG-XOamCKvRJp5RwYMpoJ6xCZ").responseJSON { response in
+        Alamofire.request(.GET, "https://api.mongolab.com/api/1/databases/rhythmictracks/collections/Announcements?apiKey=L4HrujTTG-XOamCKvRJp5RwYMpoJ6xCZ", parameters: ["l": 4, "s":"{'_id':-1}"]).responseJSON { response in
             
             if let json = response.result.value {
                 var data = JSON(json)
@@ -65,7 +65,7 @@ class HomeController: UIViewController, UITableViewDataSource, UITableViewDelega
             }
         }
         
-        Alamofire.request(.GET, "https://api.mongolab.com/api/1/databases/rhythmictracks/collections/Events?apiKey=L4HrujTTG-XOamCKvRJp5RwYMpoJ6xCZ").responseJSON { response in
+        Alamofire.request(.GET, "https://api.mongolab.com/api/1/databases/rhythmictracks/collections/Events?apiKey=L4HrujTTG-XOamCKvRJp5RwYMpoJ6xCZ", parameters: ["l": 5, "s":"{'_id':-1}"]).responseJSON { response in
             
             if let json = response.result.value {
                 var data = JSON(json)

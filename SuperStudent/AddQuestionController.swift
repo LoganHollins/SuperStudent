@@ -49,6 +49,7 @@ class AddQuestionController: UIViewController, UIPickerViewDelegate, UIPickerVie
             "postedBy": StudentInfo.StudentId,
             "upvotes": "0"
         ]
+        
         Alamofire.request(.POST, "https://api.mongolab.com/api/1/databases/rhythmictracks/collections/Questions?apiKey=L4HrujTTG-XOamCKvRJp5RwYMpoJ6xCZ", parameters: parameters, encoding: .JSON)
     }
     
