@@ -17,16 +17,18 @@
 		084C5B1B1C06948E00BCAC31 /* ScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C5B1A1C06948E00BCAC31 /* ScheduleController.swift */; };
 		084C5B1D1C0694A700BCAC31 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C5B1C1C0694A700BCAC31 /* SettingsController.swift */; };
 		084C5B1F1C0694C200BCAC31 /* QuestionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C5B1E1C0694C200BCAC31 /* QuestionsController.swift */; };
-		08F1425F1C0A53CE00EB39DF /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F1425E1C0A53CE00EB39DF /* EditProfileViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		08F1425F1C0A53CE00EB39DF /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F1425E1C0A53CE00EB39DF /* EditProfileViewController.swift */; };
+		222813731C0AA6CF00756AF9 /* Reply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222813721C0AA6CF00756AF9 /* Reply.swift */; };
+		222813811C0AA87D00756AF9 /* ReplyViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222813801C0AA87D00756AF9 /* ReplyViewCellController.swift */; };
 		226333D21C0A2EE900BB6B24 /* AddQuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226333D11C0A2EE900BB6B24 /* AddQuestionController.swift */; };
 		227A36681C0A4A1D0082559E /* ViewQuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227A36671C0A4A1D0082559E /* ViewQuestionController.swift */; };
 		22AD7D561C0950BE002AEEFC /* QuestionsDrilldownController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AD7D551C0950BE002AEEFC /* QuestionsDrilldownController.swift */; };
 		22AD7D641C0958E8002AEEFC /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AD7D631C0958E8002AEEFC /* Question.swift */; };
 		8B1E7DC01C091E84000DD195 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1E7DBF1C091E84000DD195 /* LoginViewController.swift */; };
-		A494F2241C0A7CF300335656 /* Announcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A494F2201C0A7CF300335656 /* Announcement.swift */; settings = {ASSET_TAGS = (); }; };
-		A494F2251C0A7CF300335656 /* AnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A494F2211C0A7CF300335656 /* AnnouncementViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A494F2261C0A7CF300335656 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = A494F2221C0A7CF300335656 /* Event.swift */; settings = {ASSET_TAGS = (); }; };
-		A494F2271C0A7CF300335656 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A494F2231C0A7CF300335656 /* EventViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A494F2241C0A7CF300335656 /* Announcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A494F2201C0A7CF300335656 /* Announcement.swift */; };
+		A494F2251C0A7CF300335656 /* AnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A494F2211C0A7CF300335656 /* AnnouncementViewController.swift */; };
+		A494F2261C0A7CF300335656 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = A494F2221C0A7CF300335656 /* Event.swift */; };
+		A494F2271C0A7CF300335656 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A494F2231C0A7CF300335656 /* EventViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -178,6 +180,8 @@
 		08F1425E1C0A53CE00EB39DF /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		22146D101C07F9390037B22A /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		22146D421C07FB7E0037B22A /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = "Alamofire-master/../SwiftyJSON-master/SwiftyJSON.xcodeproj"; sourceTree = "<group>"; };
+		222813721C0AA6CF00756AF9 /* Reply.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reply.swift; sourceTree = "<group>"; };
+		222813801C0AA87D00756AF9 /* ReplyViewCellController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplyViewCellController.swift; sourceTree = "<group>"; };
 		226333D11C0A2EE900BB6B24 /* AddQuestionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddQuestionController.swift; sourceTree = "<group>"; };
 		227A36671C0A4A1D0082559E /* ViewQuestionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewQuestionController.swift; sourceTree = "<group>"; };
 		22AD7D551C0950BE002AEEFC /* QuestionsDrilldownController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionsDrilldownController.swift; sourceTree = "<group>"; };
@@ -258,6 +262,8 @@
 				226333D11C0A2EE900BB6B24 /* AddQuestionController.swift */,
 				227A36671C0A4A1D0082559E /* ViewQuestionController.swift */,
 				08F1425E1C0A53CE00EB39DF /* EditProfileViewController.swift */,
+				222813721C0AA6CF00756AF9 /* Reply.swift */,
+				222813801C0AA87D00756AF9 /* ReplyViewCellController.swift */,
 			);
 			path = SuperStudent;
 			sourceTree = "<group>";
@@ -554,9 +560,11 @@
 			files = (
 				A494F2241C0A7CF300335656 /* Announcement.swift in Sources */,
 				08F1425F1C0A53CE00EB39DF /* EditProfileViewController.swift in Sources */,
+				222813731C0AA6CF00756AF9 /* Reply.swift in Sources */,
 				8B1E7DC01C091E84000DD195 /* LoginViewController.swift in Sources */,
 				22AD7D561C0950BE002AEEFC /* QuestionsDrilldownController.swift in Sources */,
 				084C5B1D1C0694A700BCAC31 /* SettingsController.swift in Sources */,
+				222813811C0AA87D00756AF9 /* ReplyViewCellController.swift in Sources */,
 				A494F2271C0A7CF300335656 /* EventViewController.swift in Sources */,
 				227A36681C0A4A1D0082559E /* ViewQuestionController.swift in Sources */,
 				226333D21C0A2EE900BB6B24 /* AddQuestionController.swift in Sources */,
