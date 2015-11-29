@@ -52,7 +52,7 @@ class HomeController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             if let json = response.result.value {
                 var data = JSON(json)
-                for i in 0...data.count - 2 {
+                for i in 0...data.count - 1 {
                     var announcement = Announcement(title: data[i]["title"].stringValue,
                         description: data[i]["description"].stringValue,
                         date: data[i]["date"].stringValue)
@@ -69,7 +69,7 @@ class HomeController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             if let json = response.result.value {
                 var data = JSON(json)
-                for i in 0...data.count - 2 {
+                for i in 0...data.count - 1 {
                     var event = Event(title: data[i]["title"].stringValue,
                         description: data[i]["description"].stringValue,
                         date: data[i]["date"].stringValue,
